@@ -1,0 +1,12 @@
+Last updated on : 04-November-2024 11:25:00 UTC+3
+
+User can create wallet.
+User can create expense type.
+User can create income type.
+Default wallet are : Card, Cash.
+Default expense type are : Food, Shopping, Other.
+Default income type are : Salary, Other.
+User can log income.
+User can log expense.
+
+
