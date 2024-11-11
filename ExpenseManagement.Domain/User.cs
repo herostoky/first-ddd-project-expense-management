@@ -11,7 +11,7 @@ public class User
         _walletIds = walletIds ?? [];
     }
 
-    public void LogExpense(int amount, Guid walletId)
+    public void LogExpense(double amount, Guid walletId)
     {
         var expense = Expense.CreateExpense(
             id: null,
