@@ -1,5 +1,18 @@
 root = true
 
+[*.cs]
 # Enforce File-scoped namespace declaration
+resharper_namespace_body = file_scoped
 csharp_style_namespace_declarations = file_scoped:error
 dotnet_diagnostic.IDE0161.severity = error
+
+# Enforce line length and argument wrap
+max_line_length = 80
+resharper_wrap_arguments_style = chop_if_long
+csharp_wrap_parameters_style = chop_if_long
+
+# Enforce to insert a new line at the end of each files
+insert_final_newline = true
+
+# Enforce sorting of using directives
+resharper_sort_usings_with_system_first = true
