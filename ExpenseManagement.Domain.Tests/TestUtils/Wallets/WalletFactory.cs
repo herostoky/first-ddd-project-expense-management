@@ -1,8 +1,8 @@
 ﻿using ExpenseManagement.Domain.Tests.TestConstants;
 
-namespace ExpenseManagement.Domain.Tests.TestUtils;
+namespace ExpenseManagement.Domain.Tests.TestUtils.Wallets;
 
-public class WalletFactory
+public static class WalletFactory
 {
     public static Wallet CreateWallet(Guid? id)
     {

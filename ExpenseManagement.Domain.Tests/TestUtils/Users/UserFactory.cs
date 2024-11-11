@@ -2,7 +2,7 @@
 
 namespace ExpenseManagement.Domain.Tests.TestUtils.Users;
 
-public class UserFactory
+public static class UserFactory
 {
     public static User CreateUser(Guid? id, List<Guid>? walletIds)
     {

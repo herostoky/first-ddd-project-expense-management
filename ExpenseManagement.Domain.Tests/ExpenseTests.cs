@@ -1,5 +1,5 @@
-using ExpenseManagement.Domain.Tests.TestUtils;
 using ExpenseManagement.Domain.Tests.TestUtils.Users;
+using ExpenseManagement.Domain.Tests.TestUtils.Wallets;
 using FluentAssertions;
 
 namespace ExpenseManagement.Domain.Tests;
