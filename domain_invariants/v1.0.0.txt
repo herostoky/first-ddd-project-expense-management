@@ -1,0 +1,26 @@
+1. Expense Amount Invariants
+
+    Non-negative Amount: An expense amount must always be greater than zero. A negative or zero value is invalid.
+    Amount Precision: The amount can have only up to a specified decimal precision (two decimal places).
+
+2. Budgeting Constraints
+
+    Total Monthly Expenses <= Monthly Budget: The sum of all expenses for a given user in a month cannot exceed their monthly budget.
+    Expense Cannot Exceed Category Budget: If an expense category (e.g., Travel, Food) has a budget, no individual expense or group of expenses should exceed it.
+    Cannot Allocate More Than Available Funds: If there's a global budget or available funds limit, no expenses should be recorded that would push the total over that amount.
+
+3. Date & Time Constraints
+
+    Valid Expense Date: The date of an expense cannot be in the future.
+    No Duplicate Expenses for Same Date: The same expense category and amount should not appear twice on the same date for the same user.
+
+4. User and Access Control
+
+    User Can Only Access Their Own Expenses: A user should only be able to access, modify, or delete their own expense entries.
+    Approval Required for High Amounts: If there’s a policy for high expenses, an expense over a certain threshold must be approved by a manager.
+
+6. Reimbursement Rules
+    
+    Reimbursable Expenses Only for Specific Categories: Only certain categories of expenses (e.g., Travel) are eligible for reimbursement.
+    Reimbursement Limit by Category: Some expense categories may have specific reimbursement limits. For instance, a daily food expense limit might be set, and any excess is non-reimbursable.
+
