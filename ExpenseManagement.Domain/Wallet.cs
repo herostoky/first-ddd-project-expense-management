@@ -8,4 +8,9 @@ public class Wallet
     {
         Id = id ?? Guid.NewGuid();
     }
+
+    public static Wallet CreateWallet(Guid? id)
+    {
+        return new Wallet(id);
+    }
 }
