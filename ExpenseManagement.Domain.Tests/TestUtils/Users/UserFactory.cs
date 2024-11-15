@@ -4,10 +4,10 @@ namespace ExpenseManagement.Domain.Tests.TestUtils.Users;
 
 public static class UserFactory
 {
-    public static User CreateUser(Guid? id, List<Guid>? walletIds)
+    public static User CreateUser(Guid? id, List<Wallet>? wallets)
     {
         return new User(
             id: id ?? Constants.User.Id,
-            walletIds: walletIds ?? [Constants.Wallet.Id]);
+            wallets: wallets ?? [Constants.Wallet.DefaultWallet]);
     }
 }

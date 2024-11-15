@@ -13,7 +13,7 @@ public class ExpenseTests
         // Create a wallet
         var wallet = WalletFactory.CreateWallet(id: null);
         // Create a user
-        var user = UserFactory.CreateUser(id: null, walletIds: [wallet.Id]);
+        var user = UserFactory.CreateUser(id: null, wallets: [wallet]);
         
         // Act
         // Log expense : zero amount
@@ -39,7 +39,7 @@ public class ExpenseTests
         // Create a wallet
         var wallet = WalletFactory.CreateWallet(id: null);
         // Create a user
-        var user = UserFactory.CreateUser(id: null, walletIds: [wallet.Id]);
+        var user = UserFactory.CreateUser(id: null, wallets: [wallet]);
         
         // Act
         // Log expense : invalid amount

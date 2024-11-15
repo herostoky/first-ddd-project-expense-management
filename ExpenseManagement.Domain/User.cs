@@ -3,34 +3,34 @@
 public class User
 {
     private readonly Guid _id;
-    private readonly List<Guid> _walletIds;
+    private readonly List<Wallet> _wallets;
     private readonly List<Guid> _expenseIds  = [];
     public const int MaxWalletNumber = 3;
-    public User(Guid? id, List<Guid>? walletIds)
+    public User(Guid? id, List<Wallet>? wallets)
     {
-        if (walletIds is not null && walletIds.Count > MaxWalletNumber)
+        _wallets = [];
+        foreach (var wallet in wallets ?? [])
         {
-            throw new InvalidOperationException(
-                $"user.must.have.only.{MaxWalletNumber}.max");
+            CreateWallet(wallet);
         }
         _id = id ?? Guid.NewGuid();
-        _walletIds = walletIds ?? [];
     }
 
     public void CreateWallet(Wallet? wallet)
     {
-        if (_walletIds.Count == MaxWalletNumber)
+        if (_wallets.Count == MaxWalletNumber)
         {
             throw new InvalidOperationException(
                 $"user.must.have.only.{MaxWalletNumber}.max");
         }
 
-        if (wallet is not null && _walletIds.Contains(wallet.Id))
+        if (wallet is not null
+            && _wallets.Any(w => w.Id.Equals(wallet.Id)))
         {
             throw new InvalidOperationException("user.wallet.already.exits");
         }
         wallet ??= Wallet.CreateWallet(id: null);
-        _walletIds.Add(wallet.Id);
+        _wallets.Add(wallet);
     }
 
     public void LogExpense(double amount, Guid walletId)

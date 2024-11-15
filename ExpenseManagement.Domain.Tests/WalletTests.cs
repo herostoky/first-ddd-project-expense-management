@@ -18,7 +18,7 @@ public class WalletTests
         // Create a user
         var user = UserFactory.CreateUser(
             id: null,
-            walletIds: [wallet1.Id, wallet2.Id, wallet3.Id]);
+            wallets: [wallet1, wallet2, wallet3]);
         
         // Act
         // Add wallet
@@ -43,7 +43,7 @@ public class WalletTests
         // Create a user
         var user = UserFactory.CreateUser(
             id: null,
-            walletIds: [wallet1.Id, wallet2.Id]);
+            wallets: [wallet1, wallet2]);
         
         // Act
         // Add wallet
