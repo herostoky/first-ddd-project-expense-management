@@ -11,12 +11,14 @@ namespace ExpenseManagement.Web.Contributors;
 /// </remarks>
 public class List(IMediator _mediator) : EndpointWithoutRequest<ContributorListResponse>
 {
+  /// <inheritdoc />
   public override void Configure()
   {
     Get("/Contributors");
     AllowAnonymous();
   }
 
+  /// <inheritdoc />
   public override async Task HandleAsync(CancellationToken cancellationToken)
   {
     Result<IEnumerable<ContributorDTO>> result = await _mediator.Send(new ListContributorsQuery(null, null), cancellationToken);

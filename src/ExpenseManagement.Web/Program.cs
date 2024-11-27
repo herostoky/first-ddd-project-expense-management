@@ -32,4 +32,7 @@ await app.UseAppMiddlewareAndSeedDatabase();
 app.Run();
 
 // Make the implicit Program.cs class public, so integration tests can reference the correct assembly for host building
+/// <summary>
+/// 
+/// </summary>
 public partial class Program { }

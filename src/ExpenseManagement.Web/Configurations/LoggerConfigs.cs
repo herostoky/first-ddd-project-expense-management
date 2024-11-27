@@ -2,8 +2,16 @@
 
 namespace ExpenseManagement.Web.Configurations;
 
+/// <summary>
+/// 
+/// </summary>
 public static class LoggerConfigs
 {
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="builder"></param>
+  /// <returns></returns>
   public static WebApplicationBuilder AddLoggerConfigs(this WebApplicationBuilder builder)
   {
 

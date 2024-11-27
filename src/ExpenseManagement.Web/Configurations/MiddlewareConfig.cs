@@ -3,8 +3,16 @@ using ExpenseManagement.Infrastructure.Data;
 
 namespace ExpenseManagement.Web.Configurations;
 
+/// <summary>
+/// 
+/// </summary>
 public static class MiddlewareConfig
 {
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="app"></param>
+  /// <returns></returns>
   public static async Task<IApplicationBuilder> UseAppMiddlewareAndSeedDatabase(this WebApplication app)
   {
     if (app.Environment.IsDevelopment())

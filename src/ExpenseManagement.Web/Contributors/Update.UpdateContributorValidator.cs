@@ -9,6 +9,7 @@ namespace ExpenseManagement.Web.Contributors;
 /// </summary>
 public class UpdateContributorValidator : Validator<UpdateContributorRequest>
 {
+  /// <inheritdoc />
   public UpdateContributorValidator()
   {
     RuleFor(x => x.Name)

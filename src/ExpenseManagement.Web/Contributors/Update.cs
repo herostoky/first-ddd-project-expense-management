@@ -13,12 +13,14 @@ namespace ExpenseManagement.Web.Contributors;
 public class Update(IMediator _mediator)
   : Endpoint<UpdateContributorRequest, UpdateContributorResponse>
 {
+  /// <inheritdoc />
   public override void Configure()
   {
     Put(UpdateContributorRequest.Route);
     AllowAnonymous();
   }
 
+  /// <inheritdoc />
   public override async Task HandleAsync(
     UpdateContributorRequest request,
     CancellationToken cancellationToken)

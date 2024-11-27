@@ -6,8 +6,16 @@ using System.Reflection;
 
 namespace ExpenseManagement.Web.Configurations;
 
+/// <summary>
+/// 
+/// </summary>
 public static class MediatrConfigs
 {
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="services"></param>
+  /// <returns></returns>
   public static IServiceCollection AddMediatrConfigs(this IServiceCollection services)
   {
     var mediatRAssemblies = new[]

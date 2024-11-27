@@ -3,8 +3,19 @@ using ExpenseManagement.Infrastructure.Email;
 
 namespace ExpenseManagement.Web.Configurations;
 
+/// <summary>
+/// 
+/// </summary>
 public static class OptionConfigs
 {
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="services"></param>
+  /// <param name="configuration"></param>
+  /// <param name="logger"></param>
+  /// <param name="builder"></param>
+  /// <returns></returns>
   public static IServiceCollection AddOptionConfigs(this IServiceCollection services,
                                                     IConfiguration configuration,
                                                     Microsoft.Extensions.Logging.ILogger logger,

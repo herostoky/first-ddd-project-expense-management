@@ -11,12 +11,14 @@ namespace ExpenseManagement.Web.Contributors;
 public class Delete(IMediator _mediator)
   : Endpoint<DeleteContributorRequest>
 {
+  /// <inheritdoc />
   public override void Configure()
   {
     Delete(DeleteContributorRequest.Route);
     AllowAnonymous();
   }
 
+  /// <inheritdoc />
   public override async Task HandleAsync(
     DeleteContributorRequest request,
     CancellationToken cancellationToken)

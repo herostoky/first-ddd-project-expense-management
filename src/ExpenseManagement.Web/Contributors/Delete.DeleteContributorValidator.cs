@@ -8,6 +8,7 @@ namespace ExpenseManagement.Web.Contributors;
 /// </summary>
 public class DeleteContributorValidator : Validator<DeleteContributorRequest>
 {
+  /// <inheritdoc />
   public DeleteContributorValidator()
   {
     RuleFor(x => x.ContributorId)

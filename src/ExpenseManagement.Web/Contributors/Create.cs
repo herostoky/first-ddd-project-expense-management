@@ -11,6 +11,7 @@ namespace ExpenseManagement.Web.Contributors;
 public class Create(IMediator _mediator)
   : Endpoint<CreateContributorRequest, CreateContributorResponse>
 {
+  /// <inheritdoc />
   public override void Configure()
   {
     Post(CreateContributorRequest.Route);
@@ -24,6 +25,7 @@ public class Create(IMediator _mediator)
     });
   }
 
+  /// <inheritdoc />
   public override async Task HandleAsync(
     CreateContributorRequest request,
     CancellationToken cancellationToken)

@@ -8,6 +8,7 @@ namespace ExpenseManagement.Web.Contributors;
 /// </summary>
 public class GetContributorValidator : Validator<GetContributorByIdRequest>
 {
+  /// <inheritdoc />
   public GetContributorValidator()
   {
     RuleFor(x => x.ContributorId)

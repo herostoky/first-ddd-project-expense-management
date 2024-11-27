@@ -4,8 +4,18 @@ using ExpenseManagement.Infrastructure.Email;
 
 namespace ExpenseManagement.Web.Configurations;
 
+/// <summary>
+/// 
+/// </summary>
 public static class ServiceConfigs
 {
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="services"></param>
+  /// <param name="logger"></param>
+  /// <param name="builder"></param>
+  /// <returns></returns>
   public static IServiceCollection AddServiceConfigs(this IServiceCollection services, Microsoft.Extensions.Logging.ILogger logger, WebApplicationBuilder builder)
   {
     services.AddInfrastructureServices(builder.Configuration, logger)
