@@ -1,0 +1,62 @@
+2024-11-27 10:03:51.413 +03:00 [INF] Registered 5 endpoints in 11 143 milliseconds.
+2024-11-27 10:03:55.105 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2024-11-27 10:03:55.224 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Contributors" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Contributors" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "Status" INTEGER NOT NULL,
+    "PhoneNumber_CountryCode" TEXT NULL,
+    "PhoneNumber_Number" TEXT NULL,
+    "PhoneNumber_Extension" TEXT NULL
+);
+2024-11-27 10:03:55.567 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-11-27 10:03:55.760 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 7), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Contributors" ("Name", "Status")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-11-27 10:03:55.778 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 8), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Contributors" ("Name", "Status")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-11-27 10:03:56.780 +03:00 [INF] Now listening on: https://localhost:55629
+2024-11-27 10:03:56.785 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-11-27 10:03:56.867 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-27 10:03:56.867 +03:00 [INF] Hosting environment: Development
+2024-11-27 10:03:56.867 +03:00 [INF] Content root path: C:\Users\Toky\Projects\Perso\first-ddd-project-expense-management\Upgrade\ExpenseManagement\src\ExpenseManagement.Web
+2024-11-27 10:07:23.472 +03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger - null null
+2024-11-27 10:07:23.646 +03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger - 302 0 null 191.6062ms
+2024-11-27 10:07:23.670 +03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2024-11-27 10:07:23.792 +03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 122.1943ms
+2024-11-27 10:07:23.842 +03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/swagger-ui.css - null null
+2024-11-27 10:07:23.846 +03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.css - null null
+2024-11-27 10:07:23.846 +03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/swagger-ui-bundle.js - null null
+2024-11-27 10:07:23.884 +03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/swagger-ui-standalone-preset.js - null null
+2024-11-27 10:07:23.884 +03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-27 10:07:23.938 +03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - 200 13794 application/javascript; charset=utf-8 53.5225ms
+2024-11-27 10:07:23.973 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2024-11-27 10:07:24.002 +03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.css - 200 218 text/css 156.3175ms
+2024-11-27 10:07:24.010 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-11-27 10:07:24.010 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-11-27 10:07:24.016 +03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/swagger-ui-standalone-preset.js - 200 230294 text/javascript 167.424ms
+2024-11-27 10:07:24.016 +03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/swagger-ui.css - 200 152073 text/css 174.1584ms
+2024-11-27 10:07:24.026 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-11-27 10:07:24.027 +03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/swagger-ui-bundle.js - 200 1452754 text/javascript 180.8746ms
+2024-11-27 10:07:24.031 +03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/_vs/browserLink - null null
+2024-11-27 10:07:24.102 +03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/_vs/browserLink - 200 null text/javascript; charset=UTF-8 71.358ms
+2024-11-27 10:07:24.475 +03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2024-11-27 10:07:24.504 +03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/favicon-32x32.png - null null
+2024-11-27 10:07:24.504 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-11-27 10:07:24.504 +03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/favicon-32x32.png - 200 628 image/png 1.0058ms
+2024-11-27 10:07:26.073 +03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 1598.1046ms
+2024-11-27 10:07:59.939 +03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2024-11-27 10:07:59.942 +03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 3.686ms
+2024-11-27 10:08:00.009 +03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/_vs/browserLink - null null
+2024-11-27 10:08:00.009 +03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-27 10:08:00.010 +03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - 200 13794 application/javascript; charset=utf-8 0.83ms
+2024-11-27 10:08:00.019 +03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.0633ms
+2024-11-27 10:08:00.149 +03:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2024-11-27 10:08:00.150 +03:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 1.0738ms
