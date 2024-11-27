@@ -11,12 +11,14 @@ namespace ExpenseManagement.Web.Contributors;
 public class GetById(IMediator _mediator)
   : Endpoint<GetContributorByIdRequest, ContributorRecord>
 {
+  /// <inheritdoc />
   public override void Configure()
   {
     Get(GetContributorByIdRequest.Route);
     AllowAnonymous();
   }
 
+  /// <inheritdoc />
   public override async Task HandleAsync(GetContributorByIdRequest request,
     CancellationToken cancellationToken)
   {
