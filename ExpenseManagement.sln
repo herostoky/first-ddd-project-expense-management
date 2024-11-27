@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseManagement.Domain", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseManagement.Domain.Tests", "ExpenseManagement.Domain.Tests\ExpenseManagement.Domain.Tests.csproj", "{E589FFBF-3E2E-4202-A472-EDA781A2A129}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseManagement.Application", "ExpenseManagement.Application\ExpenseManagement.Application.csproj", "{AA55F238-40A7-4180-8D46-7AB56C0BF08F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{E589FFBF-3E2E-4202-A472-EDA781A2A129}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E589FFBF-3E2E-4202-A472-EDA781A2A129}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E589FFBF-3E2E-4202-A472-EDA781A2A129}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA55F238-40A7-4180-8D46-7AB56C0BF08F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA55F238-40A7-4180-8D46-7AB56C0BF08F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA55F238-40A7-4180-8D46-7AB56C0BF08F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA55F238-40A7-4180-8D46-7AB56C0BF08F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
