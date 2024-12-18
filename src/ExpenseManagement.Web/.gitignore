@@ -1,2 +1,8 @@
 obj/
 bin/
+
+database.sqlite
+database.sqlite-shm
+database.sqlite-wal
+
+log*.txt
