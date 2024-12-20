@@ -1,7 +1,7 @@
 ﻿using ExpenseManagement.Api.Constants;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ExpenseManagement.Api.Controllers;
+namespace ExpenseManagement.Api.Controllers.Users;
 
 
 [ApiController]
