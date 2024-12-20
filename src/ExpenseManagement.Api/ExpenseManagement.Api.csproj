@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ExpenseManagement.Contracts\ExpenseManagement.Contracts.csproj" />
+    <ProjectReference Include="..\ExpenseManagement.UseCases\ExpenseManagement.UseCases.csproj" />
   </ItemGroup>
 
 </Project>

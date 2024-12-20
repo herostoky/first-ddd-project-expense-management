@@ -1,5 +1,7 @@
 ﻿using ExpenseManagement.Api.Constants;
 using ExpenseManagement.Contracts.Apis.Users.Requests;
+using ExpenseManagement.UseCases.Users.SignIn;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExpenseManagement.Api.Controllers.Users;
@@ -7,7 +9,7 @@ namespace ExpenseManagement.Api.Controllers.Users;
 
 [ApiController]
 [Route($"api/{nameof(Routes.User)}")]
-public class UserController(ILogger<UserController> logger) : ControllerBase
+public class UserController(ILogger<UserController> logger, ISender sender) : ControllerBase
 {
   [HttpPost(template: Routes.User.SignUp, Name = nameof(Routes.User.SignUp))]
   public async Task<IActionResult> UserSignUp()
@@ -18,10 +20,12 @@ public class UserController(ILogger<UserController> logger) : ControllerBase
   }
 
   [HttpPost(template: Routes.User.SignIn, Name = nameof(Routes.User.SignIn))]
-  public async Task<IActionResult> UserSignIn([FromBody] UserSignInRequest request)
+  public async Task<IActionResult> UserSignIn([FromBody] UserSignInRequest request, CancellationToken cancellationToken)
   {
     logger.LogInformation("Sign up User");
-    await Task.Delay(millisecondsDelay: 1000);
+    var userSignInCommand = new UserSignInCommand();
+    await sender.Send(userSignInCommand, cancellationToken);
+    await Task.Delay(millisecondsDelay: 1000, cancellationToken);
     return Ok();
   }
 
