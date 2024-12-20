@@ -1,4 +1,5 @@
 ﻿using ExpenseManagement.Api.Constants;
+using ExpenseManagement.Contracts.Apis.Users.Requests;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExpenseManagement.Api.Controllers.Users;
@@ -10,6 +11,14 @@ public class UserController(ILogger<UserController> logger) : ControllerBase
 {
   [HttpPost(template: Routes.User.SignUp, Name = nameof(Routes.User.SignUp))]
   public async Task<IActionResult> UserSignUp()
+  {
+    logger.LogInformation("Sign up User");
+    await Task.Delay(millisecondsDelay: 1000);
+    return Ok();
+  }
+
+  [HttpPost(template: Routes.User.SignIn, Name = nameof(Routes.User.SignIn))]
+  public async Task<IActionResult> UserSignIn([FromBody] UserSignInRequest request)
   {
     logger.LogInformation("Sign up User");
     await Task.Delay(millisecondsDelay: 1000);

@@ -1,3 +1,10 @@
-﻿namespace ExpenseManagement.Contracts.Apis.Users.Requests;
+﻿using System.Text.Json.Serialization;
 
-public record UserSignInRequest(string emailAddress, string clearTextPassword);
+namespace ExpenseManagement.Contracts.Apis.Users.Requests;
+
+public record UserSignInRequest(
+  [property: JsonPropertyName("email_address")]
+  string emailAddress,
+
+  [property: JsonPropertyName("password")]
+  string clearTextPassword);
