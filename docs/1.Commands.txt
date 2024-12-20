@@ -1,0 +1,6 @@
+dotnet new install Ardalis.CleanArchitecture.Template
+
+
+dotnet new clean-arch -o ExpenseManagement --aspire
+
+
