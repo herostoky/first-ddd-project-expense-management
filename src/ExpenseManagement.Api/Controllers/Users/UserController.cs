@@ -23,7 +23,7 @@ public class UserController(ILogger<UserController> logger, ISender sender) : Co
   public async Task<IActionResult> UserSignIn([FromBody] UserSignInRequest request, CancellationToken cancellationToken)
   {
     logger.LogInformation("Sign up User");
-    var userSignInCommand = new UserSignInCommand();
+    var userSignInCommand = new UserSignInCommand(request.emailAddress, request.clearTextPassword);
     await sender.Send(userSignInCommand, cancellationToken);
     await Task.Delay(millisecondsDelay: 1000, cancellationToken);
     return Ok();
