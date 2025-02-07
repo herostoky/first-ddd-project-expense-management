@@ -1,5 +1,6 @@
 ﻿using ExpenseManagement.Core.Interfaces;
 using ExpenseManagement.Core.Services;
+using ExpenseManagement.Core.UserAggregate;
 using ExpenseManagement.Infrastructure.Data;
 using ExpenseManagement.Infrastructure.Data.Queries;
 using ExpenseManagement.UseCases.Contributors.List;
@@ -19,9 +20,10 @@ public static class InfrastructureServiceExtensions
      options.UseSqlite(connectionString));
 
     services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>))
-           .AddScoped(typeof(IReadRepository<>), typeof(EfRepository<>))
-           .AddScoped<IListContributorsQueryService, ListContributorsQueryService>()
-           .AddScoped<IDeleteContributorService, DeleteContributorService>();
+      .AddScoped(typeof(IReadRepository<>), typeof(EfRepository<>))
+      .AddScoped<IReadRepository<User>, EfRepository<User>>()
+      .AddScoped<IListContributorsQueryService, ListContributorsQueryService>()
+      .AddScoped<IDeleteContributorService, DeleteContributorService>();
 
 
     logger.LogInformation("{Project} services registered", "Infrastructure");

@@ -4,6 +4,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
     <PackageReference Include="Scalar.AspNetCore" />
+    <PackageReference Include="Serilog" />
+    <PackageReference Include="Serilog.Extensions.Logging" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" />
   </ItemGroup>
 
@@ -17,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ExpenseManagement.Contracts\ExpenseManagement.Contracts.csproj" />
+    <ProjectReference Include="..\ExpenseManagement.Infrastructure\ExpenseManagement.Infrastructure.csproj" />
     <ProjectReference Include="..\ExpenseManagement.UseCases\ExpenseManagement.UseCases.csproj" />
   </ItemGroup>
 

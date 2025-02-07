@@ -1,32 +1,24 @@
-using Scalar.AspNetCore;
+using ExpenseManagement.Api.Configurations;
+using Serilog;
+using Serilog.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-builder.Services.AddControllers();
+// Configure logger
+// TODO: configure logger from AppSettings.json & move to extension methods
+var logger = Log.Logger = new LoggerConfiguration()
+.Enrich.FromLogContext()
+.CreateLogger();
+
+var appLogger = new SerilogLoggerFactory(logger)
+    .CreateLogger<Program>();
+
+builder.Services.AddServiceConfigurations(builder, appLogger);
 
 var app = builder.Build();
 
-app.MapControllers();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-  const string apiName = "WeatherForecast API V1";
-  app.MapOpenApi(); // /openapi/v1.json
-  app.UseSwaggerUI(options => options.SwaggerEndpoint(
-    url: "/openapi/v1.json",
-    name: apiName)); // /swagger/index.html
-  app.MapScalarApiReference(options =>
-      options
-        .WithTitle(apiName)
-        .WithTheme(ScalarTheme.Saturn)
-        .WithDefaultHttpClient(ScalarTarget.JavaScript, ScalarClient.HttpClient))
-    .WithName(apiName); // /scalar/v1
-}
-
-app.UseHttpsRedirection();
+app.Configure();
 
 app.Run();
+
+// TODO: update editors config : 1. Var only if type is explicit, 2. error when no method summary in every project
